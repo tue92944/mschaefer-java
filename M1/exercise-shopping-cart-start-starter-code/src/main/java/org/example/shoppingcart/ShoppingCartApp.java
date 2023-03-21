@@ -21,7 +21,7 @@ public class ShoppingCartApp {
         //2. Write code to calculate the total cost of the product based on the inventory.
 
         float totalCost = productQuantity * productCost;
-        System.out.println("Total Cost is " + totalCost);
+        System.out.println("Total Cost is $" + totalCost);
 
         //3. Write code to calculate the profit margin of the product.
 
@@ -30,7 +30,7 @@ public class ShoppingCartApp {
 
         //4. Write code to calculate the total potential profit.
         float potentialProfit = (profitMargin * productQuantity);
-        System.out.println("Potential profit is " + potentialProfit);
+        System.out.println("\nPotential profit is $" + potentialProfit);
 
 
         System.out.println("Bye");
