@@ -29,6 +29,15 @@ public class ShoppingCartApp {
         //print out enum values after converting to a string
         System.out.println(Arrays.toString(orderStatus));
         System.out.println(Arrays.toString(shippingStatus));
+
+        String businessName = "Shopping Mania";
+        String contactInfo = "909-123-5678";
+        String itemDescription = "Fresh Bananas";
+
+        System.out.println(businessName);
+        System.out.println(contactInfo);
+        System.out.println(itemDescription);
+
         System.out.println("Bye");
     }
 }
