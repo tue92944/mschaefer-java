@@ -13,12 +13,12 @@ public class PaystubCalculator {
 
         if(!workedOvertime){
             grossPay= hourlyRate * totalHoursWorked;
-            System.out.println("Your gross pay is " + grossPay);
+            System.out.println("Your gross pay is $" + grossPay);
         }
         else {
             overTimeHours= totalHoursWorked-40;
             grossPay= (hourlyRate * (totalHoursWorked- overTimeHours)) + (overTimeRate * overTimeHours);
-            System.out.println("Your gross pay with overtime is " + grossPay);
+            System.out.println("Your gross pay with overtime is $" + grossPay);
         }
 
 
