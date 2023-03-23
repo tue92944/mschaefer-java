@@ -79,17 +79,17 @@ public class ShoppingCartApp {
                 switch(shippingType) {
                     case "standard": {
                         totalCost += standardShipping;
-                        System.out.printf("Your total cost without tax and standard shipping is: %s", totalCost);
+                        System.out.printf("Your total cost with tax and standard shipping is: %s", totalCost);
                         break;
                     }
                     case "twoday": {
                         totalCost += twoDayShipping;
-                        System.out.printf("Your total cost without tax and two-day shipping is: %s", totalCost);
+                        System.out.printf("Your total cost with tax and two-day shipping is: %s", totalCost);
                         break;
                     }
                     case "overnight": {
                         totalCost += overnightShipping;
-                        System.out.printf("Your total cost without tax and overnight shipping is: %s", totalCost);
+                        System.out.printf("Your total cost with tax and overnight shipping is: %s", totalCost);
                         break;
                     }
                 }
