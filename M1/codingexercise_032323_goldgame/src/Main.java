@@ -47,7 +47,7 @@ public class Main {
 
             System.out.println("You are about to travel to the next round. Hopefully you don't run into a bandit. Good luck.");
             if (hasGuard == true) {
-                if (rndNumber <= 5) {
+                if (rndNumber <= percentage) {
                     System.out.println("Unfortunately, you have run into a bandit. But luckily you have a guard! Your guard saved you, but now you are guardless ");
                     hasGuard = false;
                     numberOfRounds++;
