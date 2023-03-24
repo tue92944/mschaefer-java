@@ -10,7 +10,7 @@ public class ShoppingCartApp {
 
     // Create arrays to contain addresses and sizes
     String[] addresses = {"123 Main St", "456 Main St", "789 Main St"};
-    String [] sizes = {"Small", "Medium", "Large"};
+    String[] sizes = {"Small", "Medium", "Large"};
 
     // Prompt for shipping address
     System.out.println("What is your shipping address? Choose from below:");
@@ -18,6 +18,9 @@ public class ShoppingCartApp {
     String addressString = console.nextLine();
     int addressSelection = Integer.parseInt(addressString);
     String finalAddress = addresses[addressSelection-1];
+
+    System.out.println("Order quantity?");
+    String quantity = console.nextLine();
 
     // Prompt for Size
 
@@ -27,8 +30,11 @@ public class ShoppingCartApp {
     int sizeSelection = Integer.parseInt(sizeStr);
     String finalSize = sizes[sizeSelection-1];
 
+    System.out.println("Promo code for free shipping?");
+    String promoCode = console.nextLine();
+
     // Print details
-    System.out.printf("\nDetails:\n Shipping To: %s \n Size Selected: %s",finalAddress,finalSize);
+    System.out.printf("\nDetails:\nShipping To: %s\nQuantity: %s \nSize Selected: %s\nPromo Code: %s",finalAddress,quantity,finalSize, promoCode);
 
     System.out.println("\nBye");
   }
