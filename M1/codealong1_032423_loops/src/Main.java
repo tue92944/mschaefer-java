@@ -86,6 +86,7 @@ public class Main {
             int nbr = Integer.parseInt(input);
             if (nbr % 2 ==0){
                 System.out.println("Yes, that's even!");
+                isValid = true;
             }else {
                 System.out.println("Nope, that's not even");
             }
