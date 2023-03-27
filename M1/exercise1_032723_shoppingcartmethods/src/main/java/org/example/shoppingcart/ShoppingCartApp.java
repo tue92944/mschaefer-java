@@ -43,11 +43,10 @@ public class ShoppingCartApp {
           address = addresses[addressIndex];
         } catch (ArrayIndexOutOfBoundsException e) {
           System.out.println("Please enter a valid menu option");
+
         }
 
       }
-
-
 
       // Prompt for shipping
       shipping = promptUserForValidatedString("Shipping? (standard/overnight/twoday)", validShippingResponses);
@@ -63,6 +62,7 @@ public class ShoppingCartApp {
           size = sizes[sizeIndex];
         } catch (ArrayIndexOutOfBoundsException e) {
           System.out.println("Please enter a valid menu option");
+
         }
       }
 
@@ -123,7 +123,12 @@ public class ShoppingCartApp {
       System.out.println(prompt);
       try {
         result = Integer.parseInt(console.nextLine());
-        isValid = true;
+        if (result > 0){
+          isValid = true;
+        }else{
+          System.out.println("Invalid input");
+        }
+
       } catch (NumberFormatException e) {
         System.out.println("Please enter a valid number");
       }
