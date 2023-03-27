@@ -5,14 +5,12 @@ public class Main {
             if (numbers[i] % 3 == 0) {
                 sum += numbers[i];
             }
-
         }
         return sum;
     }
     public static void main(String[] args) {
         int[] numbers = {3,6,9};
         System.out.println(sumArray(numbers));
-
         }
     }
 
