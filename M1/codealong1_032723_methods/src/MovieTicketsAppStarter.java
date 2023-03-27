@@ -73,8 +73,17 @@ public class MovieTicketsAppStarter {
 
     public static int getInt(String prompt, Scanner console){
         int result = -1;
-        String input = getString(prompt, console);
-        result = Integer.parseInt(input);
+        boolean isValid = false;
+        do{
+            String input = getString(prompt, console);
+            try {
+                result = Integer.parseInt(input);
+                isValid = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input");
+            }
+        }while(!isValid);
+
 
         return result;
     }
