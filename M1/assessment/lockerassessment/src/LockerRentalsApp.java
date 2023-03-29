@@ -91,21 +91,24 @@ public class LockerRentalsApp {
                 int rentedLocker = Integer.parseInt(rentedLockerStr);
                 if (lockers[rentedLocker - 1] == null) {
                     System.out.println("That locker is not rented, try again.");
-                } else {
-                    String pinInput = promptUserForValidatedString("What is your pin?", "Invalid pin. Try again.", lockerPins);
-                    // check if pin is correct
-                    if (pinInput.equalsIgnoreCase(lockerPins[rentedLocker - 1])) {
-                        //send confirmation output to user
-                        String confirm = promptUserForValidatedString("Are you sure you want to release the locker? y/n", "Must be a y or n to proceed.", confirmValues);
-                        if (confirm.equalsIgnoreCase("y")) {
-                            System.out.println("Success! Locker has been released.");
-                            //reset locker to null so it is available for rent
-                            lockers[rentedLocker - 1] = null;
-                        } else {
-                            System.out.println("Locker has not been released.");
+                    continue;
+                }
 
-                        }
-                    }
+                String pinInput = promptUserForValidatedString("What is your pin?", "Invalid pin. Try again.", lockerPins);
+                // check if pin is correct
+                if (!pinInput.equalsIgnoreCase(lockerPins[rentedLocker - 1])) {
+                    continue;
+                }
+
+                //send confirmation output to user
+                String confirm = promptUserForValidatedString("Are you sure you want to release the locker? y/n", "Must be a y or n to proceed.", confirmValues);
+                if (confirm.equalsIgnoreCase("y")) {
+                    System.out.println("Success! Locker has been released.");
+                    //reset locker to null so it is available for rent
+                    lockers[rentedLocker - 1] = null;
+                } else {
+                    System.out.println("Locker has not been released.");
+
                 }
             }
         } while (isRunning == false);
@@ -150,7 +153,7 @@ public class LockerRentalsApp {
                 isValid = true;
             } catch (NumberFormatException e) {
                 System.out.println("Goodbye!");
-                System.exit(1);
+                System.exit(0);
             }
         }
 
