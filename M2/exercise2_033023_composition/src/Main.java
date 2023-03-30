@@ -4,27 +4,27 @@ public class Main {
         String[] answers = {"y","n"};
 
         Artifact myArtifact = new Artifact();
-        Person myPerson = new Person();
-
+        Person discoverer = new Person();
+        
         myArtifact.setName(promptUserForString("Enter the name of a new Artifact:"));
         myArtifact.setYearOfDiscovery(promptInt("Enter the year of discovery:",0,2023));
-        myPerson.setFirstName(promptUserForString("What is the first name of the discoverer?"));
-        myPerson.setLastName(promptUserForString("What is the last name of the discoverer?"));
-        myPerson.setPrimarySpeciality(promptUserForString("What is the primary speciality of the discoverer?"));
-        myArtifact.setDiscoverer(myPerson);
+        discoverer.setFirstName(promptUserForString("What is the first name of the discoverer?"));
+        discoverer.setLastName(promptUserForString("What is the last name of the discoverer?"));
+        discoverer.setPrimarySpeciality(promptUserForString("What is the primary speciality of the discoverer?"));
+        myArtifact.setDiscoverer(discoverer);
         String result = (promptUserForValidatedString("Is the discoverer also the curator? y/n", answers));
 
         if (result.equalsIgnoreCase("y")){
-            myArtifact.setCurator(myPerson);
+            myArtifact.setCurator(discoverer);
         }else {
-            Person newPerson = new Person();
-            newPerson.setFirstName(promptUserForString("What is the first name of the discoverer?"));
-            newPerson.setLastName(promptUserForString("What is the last name of the discoverer?"));
-            newPerson.setPrimarySpeciality(promptUserForString("What is the primary speciality of the discoverer?"));
-            myArtifact.setCurator(newPerson);
+            Person curator = new Person();
+            curator.setFirstName(promptUserForString("What is the first name of the discoverer?"));
+            curator.setLastName(promptUserForString("What is the last name of the discoverer?"));
+            curator.setPrimarySpeciality(promptUserForString("What is the primary speciality of the discoverer?"));
+            myArtifact.setCurator(curator);
         }
 
-        System.out.println("Artifact: " + myArtifact.getName() + "\nYear of Discovery: " + myArtifact.getYearOfDiscovery() + "\nDiscoverer: " + myArtifact.getDiscoverer().getFirstName() +  " " + myArtifact.getDiscoverer().getLastName()+ ", " + myPerson.getPrimarySpeciality() + "\nCurator:" + myArtifact.getCurator().getFirstName() + " " + myArtifact.getCurator().getLastName() + ", "  + myArtifact.getCurator().getPrimarySpeciality());
+        System.out.println("Artifact: " + myArtifact.getName() + "\nYear of Discovery: " + myArtifact.getYearOfDiscovery() + "\nDiscoverer: " + myArtifact.getDiscoverer().getFirstName() +  " " + myArtifact.getDiscoverer().getLastName()+ ", " + discoverer.getPrimarySpeciality() + "\nCurator:" + myArtifact.getCurator().getFirstName() + " " + myArtifact.getCurator().getLastName() + ", "  + myArtifact.getCurator().getPrimarySpeciality());
 
 
 
