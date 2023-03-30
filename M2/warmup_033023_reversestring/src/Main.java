@@ -10,8 +10,6 @@ public class Main {
             result+= sentenceArray[i] + " ";
         }
         return result;
-
-
     }
 
     public static String getString(String prompt){
@@ -21,7 +19,5 @@ public class Main {
     }
     public static void main(String[] args) {
         System.out.println(reverseSentence());
-
-
     }
 }
