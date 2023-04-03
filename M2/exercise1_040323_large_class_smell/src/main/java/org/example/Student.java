@@ -1,10 +1,27 @@
 package org.example;
 
 public class Student {
-    private String firstName;
-    private String lastName;
+    private Person name;
     private double GPA;
-    private Teacher teacher;
+
+    private Person homeroomTeacher;
+
+    public Person getName() {
+        return name;
+    }
+
+    public void setName(Person name) {
+        this.name = name;
+    }
+
+    public Person getHomeroomTeacher() {
+        return homeroomTeacher;
+    }
+
+    public void setHomeroomTeacher(Person homeroomTeacher) {
+        this.homeroomTeacher = homeroomTeacher;
+    }
+
 
     public double getGPA() {
         return GPA;
@@ -12,29 +29,5 @@ public class Student {
 
     public void setGPA(double GPA) {
         this.GPA = GPA;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public Teacher getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
     }
 }

@@ -3,20 +3,24 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
         Student student = new Student();
-        Teacher teacher = new Teacher();
 
         ConsoleIO.display("Welcome to Better School Tracker!");
 
-        student.setFirstName(ConsoleIO.promptString("Enter Student First Name"));
-        student.setLastName(ConsoleIO.promptString("Enter Student Last Name"));
-        student.setGPA(ConsoleIO.promptDouble("Enter Student's GPA"));
-        teacher.setHomeroomTeacherFirstName(ConsoleIO.promptString("Enter Homeroom teacher's first Name"));
-        teacher.setHomeroomTeacherLastName(ConsoleIO.promptString("Enter Homeroom teacher's last name"));
-        student.setTeacher(teacher);
+        Person studentName = new Person();
+        studentName.setFirstName(ConsoleIO.promptString("Enter Student First Name"));
+        studentName.setLastName(ConsoleIO.promptString("Enter Student Last Name"));
+        student.setName(studentName);
 
-        System.out.println("Student: " + student.getFirstName() + " " + student.getLastName());
+        student.setGPA(ConsoleIO.promptDouble("Enter Student's GPA"));
+
+        Person homeroomTeacher = new Person();
+        homeroomTeacher.setFirstName(ConsoleIO.promptString("Enter Homeroom teacher's first Name"));
+        homeroomTeacher.setLastName(ConsoleIO.promptString("Enter Homeroom teacher's last name"));
+        student.setHomeroomTeacher(homeroomTeacher);
+
+        System.out.println("Student: " + student.getName().getFirstName() + " " + student.getName().getLastName());
         System.out.println("GPA: " + student.getGPA());
-        System.out.println("Homeroom Teacher: " + student.getTeacher().getHomeroomTeacherFirstName() + " " + student.getTeacher().getHomeroomTeacherLastName());
+        System.out.println("Homeroom Teacher: " + student.getHomeroomTeacher().getFirstName() + " " + student.getHomeroomTeacher().getLastName());
 
     }
 }
